@@ -1,6 +1,9 @@
 # Lighthouse in Lambda
 Simple lambda function that takes a post request via AWS Api Gateway and runs 5 lighthouse tests and saves them to a s3 bucket.
 
+## Why the node_modules in git?
+Somehow it's tricky to install lighthouse and the right version of chrome for lambda in the same project, thats why everything is in version control.
+
 ## Lighthouse viewer
 In order to view these JSON files this lighthouse instance could be used: `https://lighthouse-viewer.netlify.com`, it takes a hash and displays it's contents e.g. `https://lighthouse-viewer.netlify.com#https://myclouddomain/yourtestid.json`
 Code is basically lighthouse viewer with the hash addition: `https://github.com/jurekbarth/lighthouse`
