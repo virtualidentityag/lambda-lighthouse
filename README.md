@@ -8,6 +8,14 @@ Somehow it's tricky to install lighthouse and the right version of chrome for la
 In order to view these JSON files this lighthouse instance could be used: `https://lighthouse-viewer.netlify.com`, it takes a hash and displays it's contents e.g. `https://lighthouse-viewer.netlify.com#https://myclouddomain/yourtestid.json`
 Code is basically lighthouse viewer with the hash addition: `https://github.com/jurekbarth/lighthouse`
 
+## Setup
+1. Create a S3 Bucket or use an existing one and exchange `aws-lighouse` with `your-bucket-name`
+2. You might need to install terraform, please use their instructions
+3. Upload a zip file with the `node_modules` folder and `index.js` in it to your bucket
+4. Exchange the `s3_key` in `main.tf` the the zip filename
+5. Run `terraform init`
+6. Run `terraform apply`
+
 ## Todo
 - Serve JSON Files via Cloudfront
 - Calculate an average of these five tests
